@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Her Birthday Edition</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        background: #faf7f5;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 480px;
+        background: #ffffff;
+        padding: 28px;
+        border-radius: 18px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        text-align: center;
+        animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .title {
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-bottom: 6px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        color: #777;
+        margin-bottom: 20px;
+    }
+
+    .photo {
+        width: 100%;
+        height: auto;
+        border-radius: 14px;
+        margin-bottom: 18px;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    }
+
+    .description {
+        font-size: 15px;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+
+    .btn {
+        width: 100%;
+        background: #f3ece9;
+        border: none;
+        padding: 12px 18px;
+        font-size: 15px;
+        border-radius: 12px;
+        margin-top: 12px;
+        cursor: pointer;
+        transition: 0.25s;
+        font-weight: 500;
+    }
+
+    .btn:hover {
+        background: #e8e0dd;
+        transform: translateY(-2px);
+    }
+
+    .content-box {
+        display: none;
+        background: #f9f5f3;
+        padding: 18px;
+        border-radius: 14px;
+        margin-top: 18px;
+        line-height: 1.6;
+        animation: fadeIn 0.6s ease;
+    }
+
+    .inner-photo {
+        width: 100%;
+        border-radius: 14px;
+        margin-bottom: 14px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+
+    .footer {
+        margin-top: 25px;
+        font-size: 13px;
+        color: #777;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="title">Her Birthday Edition — 2026</div>
+    <div class="subtitle">A tiny page for a not-so-tiny smile.</div>
+
+    <!-- MAIN LANDING IMAGE -->
+    <img src="mainpage.png" class="photo" alt="Her">
+
+    <div class="description">
+        Today’s your day.  
+        I made something small for you…  
+        but you get to choose how sweet it gets 👇
+    </div>
+
+    <button class="btn" onclick="showWish('normal')">🎂 Your Normal Birthday Wish</button>
+    <button class="btn" onclick="showWish('flirty')">😏 Slightly Flirty Version</button>
+
+    <!-- NORMAL WISH BOX -->
+    <div id="normal" class="content-box">
+        <img src="button1.png" class="inner-photo" alt="Her">
+        <b>“Wishing you a year full of good days, good energy,<br>
+        and good things finding you at the right time.<br><br>
+        You deserve that much — at least.”</b>
+    </div>
+
+    <!-- FLIRTY WISH BOX -->
+    <div id="flirty" class="content-box">
+        <img src="button2.png" class="inner-photo" alt="Her">
+        <b>“Wishing you more smiles, more confidence,<br>
+        and a few more moments like the ones<br>
+        where you accidentally make my day.”</b>
+        <br><br>
+        <i>(Don’t worry — that’s the maximum flirt for today 😉)</i>
+        <br><br>
+        <h4>PS: You choosing the flirty button will tell me a lot 😌</h4>
+    </div>
+</div>
+
+<script>
+function showWish(type) {
+    document.getElementById('normal').style.display = "none";
+    document.getElementById('flirty').style.display = "none";
+
+    document.getElementById(type).style.display = "block";
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
